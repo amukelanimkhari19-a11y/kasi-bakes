@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enquiry | kasi bakes</title>
+</head>
+<body>
+    <a href="index.html">home</a>
+        <a href="about.html">about</a>
+            <a href="products.html">products</a>
+                <a href="enquiry.html">enquiry</a>
+                    <a href="contact.html">contact</a>
+</body>
+        <h2>Place an Enquiry</h2>
+        <p>Use this form to submit a custom or bulk order enquiry to Kasi Bakes. Fill in your details and describe what you need as clearly as possible. We will contact you within 24 hours to confirm your order and discuss pricing. A deposit is required to confirm all custom and bulk orders. Delivery is available for orders over R300 within the Soweto area.</p>
+
+        <!-- HOW IT WORKS -->
+        <h2>How It Works</h2>
+        <ol>
+            <li>Fill in the enquiry form below with your order details.</li>
+            <li>We will contact you within 24 hours to confirm availability and pricing.</li>
+            <li>A deposit is required to confirm all custom and bulk orders.</li>
+            <li>Collection is available from our Mofolo shop or delivery for orders over R300.</li>
+        </ol>
+
+        <p>Please note: Custom cakes and bulk orders require a minimum of 48 hours advance notice. For large corporate orders please allow 5 business days.</p>
+
+        <!-- ENQUIRY FORM -->
+        <h2>Enquiry Form</h2>
+        <form action="#" method="post">
+
+            <!-- PERSONAL DETAILS -->
+            <h3>Your Details</h3>
+
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full_name" 
+                placeholder="e.g. Thandi Mokoena">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" 
+                placeholder="e.g. thandi@email.com">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" 
+                placeholder="e.g. 082 123 4567">
+
+            <!-- ORDER DETAILS -->
+            <h3>Order Details</h3>
+
+            <label for="order-type">Order Type</label>
+            <select id="order-type" name="order_type">
+                <option value="">-- Select an option --</option>
+                <option value="bulk">Bulk Order (50+ items)</option>
+                <option value="custom-cake">Custom Cake</option>
+                <option value="corporate">Corporate Catering</option>
+                <option value="event">Event Order</option>
+                <option value="general">General Product Order</option>
+            </select>
+
+            <label for="required-date">Required Date</label>
+            <input type="date" id="required-date" name="required_date">
+
+            <label for="quantity">Estimated Quantity</label>
+            <input type="number" id="quantity" name="quantity" 
+                placeholder="e.g. 100">
+
+            <label for="products-requested">Products Required</label>
+            <textarea id="products-requested" name="products_requested" rows="4"
+                placeholder="e.g. 50 vetkoek with mince, 30 koeksisters, 2 white loaves...">
+            </textarea>
+
+            <label for="special-instructions">Special Instructions or Allergies</label>
+            <textarea id="special-instructions" name="special_instructions" rows="3"
+                placeholder="e.g. No nuts, custom message on cake, specific icing colour...">
+            </textarea>
+
+            <!-- DELIVERY OR COLLECTION -->
+            <h3>Collection or Delivery</h3>
+
+            <label>
+                <input type="radio" name="delivery" value="collection">
+                I will collect from the shop (12 Moshoeshoe Street, Mofolo)
+            </label>
+
+            <label>
+                <input type="radio" name="delivery" value="delivery">
+                I require delivery (orders over R300 only)
+            </label>
+
+            <label for="delivery-address">Delivery Address (if applicable)</label>
+            <input type="text" id="delivery-address" name="delivery_address"
+                placeholder="e.g. 5 Vilakazi Street, Orlando West, Soweto">
+
+            <!-- SUBMIT -->
+            <button type="submit">Submit Enquiry</button>
+
+        </form>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Kasi Bakes</h3>
+        <p>12 Moshoeshoe Street, Mofolo, Soweto, 1804</p>
+        <p>Phone: 011 123 4567</p>
+        <p>Email: info@kasibakes.co.za</p>
+
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <h3>Trading Hours</h3>
+        <ul>
+            <li>Monday to Friday: 06:00 - 17:00</li>
+            <li>Saturday: 06:00 - 14:00</li>
+            <li>Sunday: Closed</li>
+        </ul>
+
+        <p>© 2026 Kasi Bakes. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
