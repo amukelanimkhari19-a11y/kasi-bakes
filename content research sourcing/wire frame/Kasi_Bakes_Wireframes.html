@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasi Bakes — Wireframes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        h1 { text-align: center; margin: 20px 0 8px; font-size: 22px; color: #222; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 30px; font-size: 13px; }
+        .page-label { background: #333; color: white; padding: 8px 16px; font-size: 13px; font-weight: bold; margin: 32px 0 0 0; display: inline-block; border-radius: 4px 4px 0 0; }
+        .wireframe { background: white; border: 2px solid #333; width: 100%; max-width: 480px; margin: 0 auto 40px auto; display: block; }
+        .wf-header { background: #ccc; border-bottom: 2px solid #333; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
+        .wf-logo { background: #999; width: 100px; height: 32px; border: 1px solid #666; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #333; }
+        .wf-nav { display: flex; gap: 6px; }
+        .wf-nav span { background: #aaa; border: 1px solid #666; padding: 4px 8px; font-size: 9px; color: #333; }
+        .wf-nav span.active { background: #666; color: white; }
+        .wf-hero { background: #bbb; border-bottom: 2px solid #333; padding: 28px 16px; text-align: center; }
+        .wf-hero p { font-size: 10px; color: #444; margin-bottom: 8px; }
+        .wf-hero-title { background: #999; height: 16px; width: 70%; margin: 0 auto 8px; border: 1px solid #666; }
+        .wf-hero-text { background: #aaa; height: 10px; width: 85%; margin: 0 auto 12px; border: 1px solid #777; }
+        .wf-btn-row { display: flex; gap: 8px; justify-content: center; }
+        .wf-btn { background: #555; color: white; padding: 5px 14px; font-size: 9px; border: 1px solid #333; }
+        .wf-btn.outline { background: transparent; color: #333; border: 1px solid #333; }
+        .wf-section { padding: 14px; border-bottom: 1px solid #ccc; }
+        .wf-section-title { background: #ddd; height: 14px; width: 40%; margin-bottom: 10px; border: 1px solid #bbb; }
+        .wf-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+        .wf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .wf-card { border: 1px solid #bbb; padding: 8px; background: #f9f9f9; }
+        .wf-img { background: #ccc; height: 50px; margin-bottom: 6px; border: 1px solid #aaa; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #555; }
+        .wf-img.tall { height: 80px; }
+        .wf-img.portrait { width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 6px; }
+        .wf-line { background: #ddd; height: 8px; margin-bottom: 4px; border: 1px solid #ccc; }
+        .wf-line.short { width: 60%; }
+        .wf-line.xshort { width: 40%; }
+        .wf-line.price { background: #bbb; width: 50%; }
+        .wf-banner { background: #aaa; padding: 20px 14px; text-align: center; border-bottom: 1px solid #888; }
+        .wf-banner-title { background: #888; height: 16px; width: 50%; margin: 0 auto 6px; border: 1px solid #666; }
+        .wf-banner-sub { background: #999; height: 9px; width: 70%; margin: 0 auto; border: 1px solid #777; }
+        .wf-cta { background: #888; padding: 16px; text-align: center; border-bottom: 1px solid #555; }
+        .wf-footer { background: #555; padding: 14px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .wf-footer-col .wf-line { background: #888; border-color: #777; }
+        .wf-footer-copy { background: #444; padding: 6px; text-align: center; }
+        .wf-form-group { margin-bottom: 10px; }
+        .wf-label { background: #ddd; height: 8px; width: 30%; margin-bottom: 4px; border: 1px solid #ccc; }
+        .wf-input { background: #f0f0f0; height: 20px; width: 100%; border: 1px solid #bbb; }
+        .wf-textarea { background: #f0f0f0; height: 48px; width: 100%; border: 1px solid #bbb; }
+        .wf-select { background: #f0f0f0; height: 20px; width: 100%; border: 1px solid #bbb; }
+        .wf-radio-group { display: flex; gap: 8px; margin-top: 4px; }
+        .wf-radio { background: #e0e0e0; height: 16px; flex: 1; border: 1px solid #bbb; }
+        .wf-submit { background: #555; height: 28px; width: 40%; margin-top: 8px; border: 1px solid #333; }
+        .wf-map { background: #c8d8c8; height: 80px; border: 1px solid #aaa; margin-top: 8px; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #555; }
+        .wf-list-item { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+        .wf-bullet { width: 6px; height: 6px; background: #888; border-radius: 50%; flex-shrink: 0; }
+        .page-wrapper { max-width: 480px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+<h1>Kasi Bakes — Website Wireframes</h1>
+<p class="subtitle">Low-fidelity wireframes | Part 1 — Building the Foundation | 2026</p>
+
+<!-- PAGE 1: HOMEPAGE -->
+<div class="page-wrapper">
+    <div class="page-label">Page 1 — Homepage (index.html)</div>
+    <div class="wireframe">
+        <div class="wf-header">
+            <div class="wf-logo">LOGO</div>
+            <div class="wf-nav"><span class="active">Home</span><span>About</span><span>Products</span><span>Enquiry</span><span>Contact</span></div>
+        </div>
+        <div class="wf-hero">
+            <p>HERO IMAGE / BANNER</p>
+            <div class="wf-hero-title"></div>
+            <div class="wf-hero-text"></div>
+            <div class="wf-btn-row"><div class="wf-btn">View Products</div><div class="wf-btn outline">Place Order</div></div>
+        </div>
+        <div class="wf-section">
+            <div class="wf-section-title"></div>
+            <div class="wf-grid-3">
+                <div class="wf-card"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line short"></div></div>
+                <div class="wf-card"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line short"></div></div>
+                <div class="wf-card"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line short"></div></div>
+            </div>
+        </div>
+        <div class="wf-section">
+            <div class="wf-section-title"></div>
+            <div class="wf-grid-3">
+                <div class="wf-card"><div class="wf-img">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+            </div>
+        </div>
+        <div class="wf-cta"><div class="wf-line short" style="margin:0 auto 6px"></div><div class="wf-line" style="margin:0 auto 8px"></div><div class="wf-submit" style="margin:0 auto"></div></div>
+        <div class="wf-footer"><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-footer-copy"><div class="wf-line" style="background:#666;width:50%;margin:0 auto;border-color:#555"></div></div>
+    </div>
+</div>
+
+<!-- PAGE 2: ABOUT -->
+<div class="page-wrapper">
+    <div class="page-label">Page 2 — About Us (about.html)</div>
+    <div class="wireframe">
+        <div class="wf-header">
+            <div class="wf-logo">LOGO</div>
+            <div class="wf-nav"><span>Home</span><span class="active">About</span><span>Products</span><span>Enquiry</span><span>Contact</span></div>
+        </div>
+        <div class="wf-banner"><div class="wf-banner-title"></div><div class="wf-banner-sub"></div></div>
+        <div class="wf-section"><div class="wf-section-title"></div><div class="wf-line"></div><div class="wf-line"></div><div class="wf-line short"></div></div>
+        <div class="wf-section">
+            <div class="wf-grid-2">
+                <div class="wf-card"><div class="wf-line short"></div><div class="wf-line"></div><div class="wf-line short"></div></div>
+                <div class="wf-card"><div class="wf-line short"></div><div class="wf-line"></div><div class="wf-line short"></div></div>
+            </div>
+        </div>
+        <div class="wf-section">
+            <div class="wf-section-title"></div>
+            <div class="wf-grid-3">
+                <div class="wf-card" style="text-align:center"><div class="wf-img portrait">IMG</div><div class="wf-line"></div><div class="wf-line short" style="margin:0 auto 4px"></div></div>
+                <div class="wf-card" style="text-align:center"><div class="wf-img portrait">IMG</div><div class="wf-line"></div><div class="wf-line short" style="margin:0 auto 4px"></div></div>
+                <div class="wf-card" style="text-align:center"><div class="wf-img portrait">IMG</div><div class="wf-line"></div><div class="wf-line short" style="margin:0 auto 4px"></div></div>
+            </div>
+        </div>
+        <div class="wf-section"><div class="wf-section-title"></div>
+            <div class="wf-list-item"><div class="wf-bullet"></div><div class="wf-line" style="flex:1;margin:0"></div></div>
+            <div class="wf-list-item" style="margin-top:5px"><div class="wf-bullet"></div><div class="wf-line" style="flex:1;margin:0"></div></div>
+            <div class="wf-list-item" style="margin-top:5px"><div class="wf-bullet"></div><div class="wf-line" style="flex:1;margin:0"></div></div>
+        </div>
+        <div class="wf-footer"><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-footer-copy"><div class="wf-line" style="background:#666;width:50%;margin:0 auto;border-color:#555"></div></div>
+    </div>
+</div>
+
+<!-- PAGE 3: PRODUCTS -->
+<div class="page-wrapper">
+    <div class="page-label">Page 3 — Products (products.html)</div>
+    <div class="wireframe">
+        <div class="wf-header">
+            <div class="wf-logo">LOGO</div>
+            <div class="wf-nav"><span>Home</span><span>About</span><span class="active">Products</span><span>Enquiry</span><span>Contact</span></div>
+        </div>
+        <div class="wf-banner"><div class="wf-banner-title"></div><div class="wf-banner-sub"></div></div>
+        <div class="wf-section"><div class="wf-section-title"></div>
+            <div class="wf-grid-3">
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+            </div>
+        </div>
+        <div class="wf-section" style="background:#fafafa"><div class="wf-section-title"></div>
+            <div class="wf-grid-3">
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+            </div>
+        </div>
+        <div class="wf-section"><div class="wf-section-title"></div>
+            <div class="wf-grid-3">
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+                <div class="wf-card"><div class="wf-img tall">IMG</div><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line price xshort"></div></div>
+            </div>
+        </div>
+        <div class="wf-cta"><div class="wf-line short" style="margin:0 auto 6px"></div><div class="wf-line" style="margin:0 auto 8px"></div><div class="wf-submit" style="margin:0 auto"></div></div>
+        <div class="wf-footer"><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-footer-copy"><div class="wf-line" style="background:#666;width:50%;margin:0 auto;border-color:#555"></div></div>
+    </div>
+</div>
+
+<!-- PAGE 4: ENQUIRY -->
+<div class="page-wrapper">
+    <div class="page-label">Page 4 — Enquiry (enquiry.html)</div>
+    <div class="wireframe">
+        <div class="wf-header">
+            <div class="wf-logo">LOGO</div>
+            <div class="wf-nav"><span>Home</span><span>About</span><span>Products</span><span class="active">Enquiry</span><span>Contact</span></div>
+        </div>
+        <div class="wf-banner"><div class="wf-banner-title"></div><div class="wf-banner-sub"></div></div>
+        <div class="wf-section"><div class="wf-section-title"></div>
+            <div class="wf-list-item"><div class="wf-bullet"></div><div class="wf-line" style="flex:1;margin:0"></div></div>
+            <div class="wf-list-item" style="margin-top:5px"><div class="wf-bullet"></div><div class="wf-line" style="flex:1;margin:0"></div></div>
+            <div class="wf-list-item" style="margin-top:5px"><div class="wf-bullet"></div><div class="wf-line" style="flex:1;margin:0"></div></div>
+            <div class="wf-list-item" style="margin-top:5px"><div class="wf-bullet"></div><div class="wf-line" style="flex:1;margin:0"></div></div>
+        </div>
+        <div class="wf-section">
+            <div class="wf-section-title"></div>
+            <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px">
+                <div class="wf-line xshort" style="margin-bottom:8px"></div>
+                <div class="wf-form-group"><div class="wf-label"></div><div class="wf-input"></div></div>
+                <div class="wf-form-group"><div class="wf-label"></div><div class="wf-input"></div></div>
+                <div class="wf-form-group"><div class="wf-label"></div><div class="wf-input"></div></div>
+            </div>
+            <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px">
+                <div class="wf-line xshort" style="margin-bottom:8px"></div>
+                <div class="wf-form-group"><div class="wf-label"></div><div class="wf-select"></div></div>
+                <div class="wf-form-group"><div class="wf-label"></div><div class="wf-input"></div></div>
+                <div class="wf-form-group"><div class="wf-label"></div><div class="wf-textarea"></div></div>
+            </div>
+            <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px">
+                <div class="wf-line xshort" style="margin-bottom:8px"></div>
+                <div class="wf-radio-group"><div class="wf-radio"></div><div class="wf-radio"></div></div>
+                <div class="wf-form-group" style="margin-top:8px"><div class="wf-label"></div><div class="wf-input"></div></div>
+            </div>
+            <div class="wf-submit"></div>
+        </div>
+        <div class="wf-footer"><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-footer-copy"><div class="wf-line" style="background:#666;width:50%;margin:0 auto;border-color:#555"></div></div>
+    </div>
+</div>
+
+<!-- PAGE 5: CONTACT -->
+<div class="page-wrapper">
+    <div class="page-label">Page 5 — Contact (contact.html)</div>
+    <div class="wireframe">
+        <div class="wf-header">
+            <div class="wf-logo">LOGO</div>
+            <div class="wf-nav"><span>Home</span><span>About</span><span>Products</span><span>Enquiry</span><span class="active">Contact</span></div>
+        </div>
+        <div class="wf-banner"><div class="wf-banner-title"></div><div class="wf-banner-sub"></div></div>
+        <div class="wf-section"><div class="wf-section-title"></div>
+            <div class="wf-grid-2">
+                <div class="wf-card"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line short"></div><div class="wf-map">MAP 1</div></div>
+                <div class="wf-card"><div class="wf-line"></div><div class="wf-line short"></div><div class="wf-line short"></div><div class="wf-map">MAP 2</div></div>
+            </div>
+        </div>
+        <div class="wf-section">
+            <div class="wf-section-title"></div>
+            <div class="wf-form-group"><div class="wf-label"></div><div class="wf-input"></div></div>
+            <div class="wf-form-group"><div class="wf-label"></div><div class="wf-input"></div></div>
+            <div class="wf-form-group"><div class="wf-label"></div><div class="wf-input"></div></div>
+            <div class="wf-form-group"><div class="wf-label"></div><div class="wf-select"></div></div>
+            <div class="wf-form-group"><div class="wf-label"></div><div class="wf-textarea"></div></div>
+            <div class="wf-submit"></div>
+        </div>
+        <div class="wf-footer"><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div><div class="wf-footer-col"><div class="wf-line"></div><div class="wf-line short"></div></div></div>
+        <div class="wf-footer-copy"><div class="wf-line" style="background:#666;width:50%;margin:0 auto;border-color:#555"></div></div>
+    </div>
+</div>
+
+</body>
+</html>
