@@ -1,90 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about | kasi bakes</title>
+  <!-- Character encoding and responsive viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Title tag -->
+  <title>About Us | Kasi Bakes – Our Story, Mission and Team</title>
+
+  <!-- SEO: Meta description -->
+  <meta name="description" content="Learn about Kasi Bakes — an artisan bakery founded in Mofolo, Soweto in 2018. Discover our story, mission, values, and the team behind every loaf and bake.">
+
+  <!-- SEO: Meta keywords -->
+  <meta name="keywords" content="Kasi Bakes story, about Soweto bakery, artisan bakery history, community bakery Johannesburg, Kasi Bakes team, Mofolo bakery mission">
+
+  <!-- SEO: Author -->
+  <meta name="author" content="Kasi Bakes">
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<link rel="stylesheet" href="css/styles.css">
 <body>
-    <a href="index.html">home</a>
-        <a href="about.html">about</a>
-            <a href="products.html">products</a>
-                <a href="enquiry.html">enquiry</a>
-                    <a href="contact.html">contact</a>
-</body>
- <!-- HEADER -->
-    <header>
-        <h1>Kasi Bakes</h1>
-        <p>Baked with love in Soweto</p>
 
-    <main>
-
-        <!-- PAGE HEADING -->
-        <h2>About Kasi Bakes</h2>
-        <p>Kasi Bakes was founded in 2018 by Nomsa Dlamini, a passionate baker from Mofolo, Soweto. She started baking from home and selling to neighbours before opening her own shop. Today, Kasi Bakes employs five local community members and bakes over 200 items daily. We source our ingredients from local Gauteng suppliers to support the community. Our mission is to bring the warmth of home-baked goodness to every household in Soweto.</p>
-
-        <!-- OUR STORY -->
-        <h2>Our Story</h2>
-        <p>Nomsa discovered her love for baking at age 12, learning recipes from her grandmother. By 2018 she was selling vetkoek and koeksisters at the local taxi rank every weekend. The demand grew so quickly that by 2020 she opened a small shopfront on Moshoeshoe Street. Kasi Bakes now produces over 200 baked items every single day. We are proud to be a homegrown Soweto business serving our community.</p>
-
-        <!-- MISSION -->
-        <h2>Our Mission</h2>
-        <p>To bring the warmth of home-baked goodness to every household in Soweto, celebrating South African flavours with pride and community spirit.</p>
-
-        <!-- VISION -->
-        <h2>Our Vision</h2>
-        <p>To become the most trusted artisan bakery brand in Gauteng, expanding delivery services across the province by 2028.</p>
-
-        <!-- TEAM -->
-        <h2>Meet Our Team</h2>
-
-        <h3>Nomsa Dlamini — Founder and Head Baker</h3>
-        <img src="images/team-nomsa.jpg" alt="Nomsa Dlamini, founder of Kasi Bakes">
-        <p>Nomsa has been baking since age 12, learning from her grandmother's recipes. She oversees all production and recipe development at Kasi Bakes.</p>
-
-        <h3>Thabo Mokoena — Bakery Assistant</h3>
-        <img src="images/team-thabo.jpg" alt="Thabo Mokoena, bakery assistant">
-        <p>Thabo joined the team in 2021 and specialises in bread baking and delivery coordination for bulk orders.</p>
-
-        <h3>Lerato Sithole — Front of House</h3>
-        <img src="images/team-lerato.jpg" alt="Lerato Sithole, front of house">
-        <p>Lerato manages customer service and orders, ensuring every customer leaves with a smile.</p>
-
-        <!-- COMMUNITY -->
-        <h2>Our Commitment to Soweto</h2>
+  <!-- HEADER: Site branding and navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <h1>Kasi Bakes</h1>
+          <span>Baked with love in Soweto</span>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
         <ul>
-            <li>All staff are hired from the local Mofolo and Soweto community.</li>
-            <li>We source our flour, eggs, and produce from local Gauteng suppliers.</li>
-            <li>We donate unsold baked goods each evening to a local shelter in Soweto.</li>
-            <li>We participate in school fundraising events and community markets.</li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- ADDRESS -->
-        <h2>Visit Us</h2>
-        <p>12 Moshoeshoe Street, Mofolo, Soweto, Johannesburg, 1804</p>
-        <p>Phone: 011 123 4567</p>
-        <p>Email: info@kasibakes.co.za</p>
+  <!-- MAIN CONTENT -->
+  <main>
 
-    </main>
+    <!-- PAGE BANNER -->
+    <section class="page-banner" aria-label="About page banner">
+      <h2>About Kasi Bakes</h2>
+      <p>A bakery born in the kasi, built for the community.</p>
+    </section>
 
-    <!-- FOOTER -->
-    <footer>
+    <!-- OUR STORY SECTION -->
+    <section class="about-story" aria-labelledby="story-heading">
+      <div class="about-layout">
+
+        <div class="about-text">
+          <h2 id="story-heading">Our Story</h2>
+          <p>Kasi Bakes was founded in 2018 by Nomsa Dlamini in her family kitchen on Moshoeshoe Street, Mofolo. What started as baking vetkoek and koeksisters for neighbours soon grew into a full-time passion and community institution.</p>
+          <p>After receiving consistent demand from local schools, churches, and corporate offices, Nomsa opened the first Kasi Bakes storefront in 2020. In 2023, the Pimville branch was added to serve a wider community across Soweto.</p>
+          <p>Today, Kasi Bakes employs 12 local staff members, sources flour from a Soweto-based miller, and serves hundreds of customers daily. Every product is made by hand using the same traditional recipes Nomsa learned from her grandmother.</p>
+        </div>
+
+        <div class="about-image">
+          <img src="images/about-bakery.jpg"
+               alt="Inside the Kasi Bakes bakery — bakers at work preparing fresh bread and traditional baked goods"
+               onerror="this.src='https://via.placeholder.com/400x300/D2691E/FFFFFF?text=Kasi+Bakes+Bakery'">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MISSION AND VISION SECTION -->
+    <section class="mission-vision" aria-labelledby="mission-heading">
+      <h2 id="mission-heading">Mission &amp; Vision</h2>
+      <div class="mv-grid">
+
+        <div class="mv-card">
+          <div class="mv-icon" aria-hidden="true">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To provide the Soweto community with freshly baked, high-quality products made from honest ingredients, while creating meaningful employment for local people and celebrating South African baking traditions.</p>
+        </div>
+
+        <div class="mv-card">
+          <div class="mv-icon" aria-hidden="true">🌟</div>
+          <h3>Our Vision</h3>
+          <p>To become the most trusted artisan bakery in Gauteng — expanding across townships while remaining rooted in our community values, affordability, and the warmth of handmade food.</p>
+        </div>
+
+        <div class="mv-card">
+          <div class="mv-icon" aria-hidden="true">💛</div>
+          <h3>Our Values</h3>
+          <ul>
+            <li>Quality over quantity</li>
+            <li>Community first</li>
+            <li>Honest ingredients</li>
+            <li>Respect for tradition</li>
+            <li>Local employment</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUR TEAM SECTION -->
+    <section class="team-section" aria-labelledby="team-heading">
+      <h2 id="team-heading">Meet the Team</h2>
+      <div class="team-grid">
+
+        <!-- Team member 1 -->
+        <article class="team-card">
+          <div class="team-img-wrapper">
+            <img src="images/team-nomsa.jpg"
+                 alt="Nomsa Dlamini, founder of Kasi Bakes, smiling in the bakery"
+                 onerror="this.src='https://via.placeholder.com/200x200/D2691E/FFFFFF?text=Nomsa'">
+          </div>
+          <h3>Nomsa Dlamini</h3>
+          <p class="team-role">Founder &amp; Head Baker</p>
+          <p>Nomsa brings 15 years of baking experience and a deep love for South African food traditions to every product Kasi Bakes creates.</p>
+        </article>
+
+        <!-- Team member 2 -->
+        <article class="team-card">
+          <div class="team-img-wrapper">
+            <img src="images/team-sipho.jpg"
+                 alt="Sipho Khumalo, production manager at Kasi Bakes, standing at work station"
+                 onerror="this.src='https://via.placeholder.com/200x200/8B6914/FFFFFF?text=Sipho'">
+          </div>
+          <h3>Sipho Khumalo</h3>
+          <p class="team-role">Production Manager</p>
+          <p>Sipho oversees daily production at both branches, ensuring every item that leaves the oven meets the Kasi Bakes standard of quality.</p>
+        </article>
+
+        <!-- Team member 3 -->
+        <article class="team-card">
+          <div class="team-img-wrapper">
+            <img src="images/team-thandi.jpg"
+                 alt="Thandiwe Mokoena, customer service lead at Kasi Bakes, at the front counter"
+                 onerror="this.src='https://via.placeholder.com/200x200/DAA520/FFFFFF?text=Thandi'">
+          </div>
+          <h3>Thandiwe Mokoena</h3>
+          <p class="team-role">Customer Service Lead</p>
+          <p>Thandi is the friendly face at the Mofolo branch and manages all customer enquiries, bulk orders, and corporate relationships.</p>
+        </article>
+
+        <!-- Team member 4 -->
+        <article class="team-card">
+          <div class="team-img-wrapper">
+            <img src="images/team-bongani.jpg"
+                 alt="Bongani Sithole, delivery coordinator at Kasi Bakes"
+                 onerror="this.src='https://via.placeholder.com/200x200/A0522D/FFFFFF?text=Bongani'">
+          </div>
+          <h3>Bongani Sithole</h3>
+          <p class="team-role">Delivery Coordinator</p>
+          <p>Bongani manages the delivery fleet and ensures all bulk orders reach customers fresh and on time across the Soweto area.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MILESTONES / TIMELINE SECTION -->
+    <section class="timeline-section" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading">Our Journey</h2>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-year">2018</span>
+          <div class="timeline-content">
+            <h3>The Beginning</h3>
+            <p>Nomsa begins baking from her home kitchen on Moshoeshoe Street, Mofolo. Vetkoek and koeksisters sold to neighbours and at local events.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">2019</span>
+          <div class="timeline-content">
+            <h3>First Corporate Orders</h3>
+            <p>Kasi Bakes secures its first bulk corporate order — 300 loaves for a local school feeding programme. Word spreads fast.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">2020</span>
+          <div class="timeline-content">
+            <h3>First Storefront Opens</h3>
+            <p>The Mofolo branch opens to the public. Three staff members are hired from the local community. Daily production begins at 4am.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">2022</span>
+          <div class="timeline-content">
+            <h3>Community Award</h3>
+            <p>Kasi Bakes receives the Soweto Business Excellence Award for Community Impact, recognising its local employment and sourcing practices.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">2023</span>
+          <div class="timeline-content">
+            <h3>Pimville Branch Opens</h3>
+            <p>A second branch opens in Pimville to meet growing demand. The team grows to 12 full-time staff members.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-year">2026</span>
+          <div class="timeline-content">
+            <h3>Online Presence Launched</h3>
+            <p>Kasi Bakes launches its website, enabling customers across Soweto and Johannesburg to browse products and place enquiries online.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
         <h3>Kasi Bakes</h3>
-        <p>12 Moshoeshoe Street, Mofolo, Soweto, 1804</p>
-        <p>Phone: 011 123 4567</p>
-        <p>Email: info@kasibakes.co.za</p>
-
+        <p>Artisan baked goods made with love in Mofolo, Soweto since 2018.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>12 Moshoeshoe Street<br>Mofolo, Soweto, 1804</p>
+        <p>Tel: <a href="tel:0111234567">011 123 4567</a></p>
+        <p>Email: <a href="mailto:info@kasibakes.co.za">info@kasibakes.co.za</a></p>
+      </div>
+      <div class="footer-col">
         <h3>Trading Hours</h3>
         <ul>
-            <li>Monday to Friday: 06:00 - 17:00</li>
-            <li>Saturday: 06:00 - 14:00</li>
-            <li>Sunday: Closed</li>
+          <li>Mon – Fri: 06:00 – 17:00</li>
+          <li>Saturday: 06:00 – 14:00</li>
+          <li>Sunday: Closed</li>
         </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kasi Bakes. All rights reserved.</p>
+    </div>
+  </footer>
 
-        <p>© 2026 Kasi Bakes. All rights reserved.</p>
-    </footer>
+  <!-- JavaScript file -->
+  <script src="javascript/main.js"></script>
 
 </body>
-</html>
 </html>

@@ -1,40 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home | kasi bakes</title>
+  <!-- Character encoding and viewport for responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Title tag -->
+  <title>Kasi Bakes | Artisan Bakery in Mofolo, Soweto</title>
+
+  <!-- SEO: Meta description -->
+  <meta name="description" content="Kasi Bakes is an artisan bakery in Mofolo, Soweto offering freshly baked breads, vetkoek, koeksisters, cakes, and custom bulk orders. Order online today.">
+
+  <!-- SEO: Meta keywords -->
+  <meta name="keywords" content="bakery Soweto, artisan bread Johannesburg, vetkoek, koeksisters, custom cakes Soweto, Kasi Bakes, bulk orders bakery, Mofolo bakery">
+
+  <!-- SEO: Author -->
+  <meta name="author" content="Kasi Bakes">
+
+  <!-- SEO: Open Graph tags for social sharing -->
+  <meta property="og:title" content="Kasi Bakes | Artisan Bakery in Mofolo, Soweto">
+  <meta property="og:description" content="Freshly baked breads, traditional SA bakes, and custom cakes from the heart of Soweto.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amukelanimkhari19-a11y.github.io/kasi-bakes/">
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<link rel="stylesheet" href="css/styles.css">
 <body>
-    <a href="index.html">home</a>
-        <a href="about.html">about</a>
-            <a href="products.html">products</a>
-                <a href="enquiry.html">enquiry</a>
-                    <a href="contact.html">contact</a>
+
+  <!-- HEADER: Site branding and navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo / Site name -->
+      <div class="logo">
+        <a href="index.html">
+          <h1>Kasi Bakes</h1>
+          <span>Baked with love in Soweto</span>
+        </a>
+      </div>
+
+      <!-- Hamburger button for mobile nav -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main navigation menu -->
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero" aria-label="Welcome banner">
+      <div class="hero-content">
+        <h2>Welcome to Kasi Bakes!</h2>
+        <p>Artisan baked goods from the heart of Mofolo, Soweto. Made fresh daily with love and tradition.</p>
+        <div class="hero-buttons">
+          <a href="products.html" class="btn btn-primary">View Our Products</a>
+          <a href="enquiry.html" class="btn btn-secondary">Place an Order</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="features" aria-labelledby="features-heading">
+      <h2 id="features-heading">Why Choose Us?</h2>
+      <div class="features-grid">
+
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">🤲</div>
+          <h3>100% Handmade</h3>
+          <p>Every item is made with love and care, using traditional methods and the finest ingredients.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Community Roots</h3>
+          <p>Born and raised in Soweto, we employ local talent and source ingredients from nearby farms.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>Bulk Orders Welcome</h3>
+          <p>Planning a corporate event, party or school function? We offer bulk ordering with delivery options.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">⏰</div>
+          <h3>Baked Fresh Daily</h3>
+          <p>Our ovens start at 4am every morning so you always get the freshest bakes possible.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section class="featured-products" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Products</h2>
+      <div class="products-grid">
+
+        <!-- Product card 1 -->
+        <article class="product-card" data-category="traditional">
+          <div class="product-img-wrapper">
+            <img src="images/vetkoek.jpg"
+                 alt="Golden freshly fried vetkoek on a plate, filled with mince"
+                 class="product-img"
+                 onerror="this.src='https://via.placeholder.com/300x200/D2691E/FFFFFF?text=Vetkoek'">
+          </div>
+          <div class="product-info">
+            <h3>Vetkoek</h3>
+            <p>Golden, fluffy deep-fried dough with savoury mince or sweet fillings.</p>
+            <span class="price">From R8 each</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- Product card 2 -->
+        <article class="product-card" data-category="traditional">
+          <div class="product-img-wrapper">
+            <img src="images/koeksisters.jpg"
+                 alt="Sticky golden koeksisters plaited and soaked in sweet syrup"
+                 class="product-img"
+                 onerror="this.src='https://via.placeholder.com/300x200/DAA520/FFFFFF?text=Koeksisters'">
+          </div>
+          <div class="product-info">
+            <h3>Koeksisters</h3>
+            <p>Crispy, sticky-sweet plaited koeksisters soaked in spiced syrup.</p>
+            <span class="price">From R12 each</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- Product card 3 -->
+        <article class="product-card" data-category="bread">
+          <div class="product-img-wrapper">
+            <img src="images/white-bread.jpg"
+                 alt="Fresh white loaf of bread on a wooden board"
+                 class="product-img"
+                 onerror="this.src='https://via.placeholder.com/300x200/F5DEB3/333333?text=White+Bread'">
+          </div>
+          <div class="product-info">
+            <h3>White Loaf</h3>
+            <p>Soft, pillowy white bread baked fresh every morning.</p>
+            <span class="price">From R22 per loaf</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+      </div>
+      <div class="section-cta">
+        <a href="products.html" class="btn btn-primary">See All Products</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / FAQ ACCORDION SECTION -->
+    <section class="accordion-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+
+        <!-- FAQ item 1 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq1">
+            How do I place a bulk order?
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel" id="faq1" hidden>
+            <p>You can place a bulk order via our <a href="enquiry.html">enquiry form</a> or by calling us at 011 123 4567. We require at least 48 hours notice for all bulk and custom orders.</p>
+          </div>
+        </div>
+
+        <!-- FAQ item 2 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq2">
+            Do you offer delivery?
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel" id="faq2" hidden>
+            <p>Yes! We offer delivery within Soweto and surrounding areas for orders above R300. Delivery fees apply based on distance. Contact us for a quote.</p>
+          </div>
+        </div>
+
+        <!-- FAQ item 3 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq3">
+            Can I get custom cakes for events?
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel" id="faq3" hidden>
+            <p>Absolutely! We create custom celebration cakes for birthdays, graduations, and corporate events. Use our <a href="enquiry.html">enquiry form</a> to describe your requirements and we will get back to you with a quote within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- FAQ item 4 -->
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq4">
+            What are your trading hours?
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel" id="faq4" hidden>
+            <p>We are open Monday to Friday 06:00–17:00 and Saturday 06:00–14:00. We are closed on Sundays and public holidays.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FIND US SECTION -->
+    <section class="find-us" aria-labelledby="findus-heading">
+      <h2 id="findus-heading">Find Us</h2>
+      <p>We are located at 12 Moshoeshoe Street, Mofolo, Soweto. Come visit us or place an order for pickup or delivery!</p>
+      <div class="contact-quick">
+        <p>📞 <a href="tel:0111234567">011 123 4567</a></p>
+        <p>✉️ <a href="mailto:info@kasibakes.co.za">info@kasibakes.co.za</a></p>
+        <p>📍 12 Moshoeshoe Street, Mofolo, Soweto, 1804</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+
+      <!-- Footer: About column -->
+      <div class="footer-col">
+        <h3>Kasi Bakes</h3>
+        <p>Artisan baked goods made with love in Mofolo, Soweto since 2018.</p>
+      </div>
+
+      <!-- Footer: Quick links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer: Contact info -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>12 Moshoeshoe Street<br>Mofolo, Soweto, 1804</p>
+        <p>Tel: <a href="tel:0111234567">011 123 4567</a></p>
+        <p>Email: <a href="mailto:info@kasibakes.co.za">info@kasibakes.co.za</a></p>
+      </div>
+
+      <!-- Footer: Trading hours -->
+      <div class="footer-col">
+        <h3>Trading Hours</h3>
+        <ul>
+          <li>Mon – Fri: 06:00 – 17:00</li>
+          <li>Saturday: 06:00 – 14:00</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kasi Bakes. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript file link -->
+  <script src="javascript/main.js"></script>
+
 </body>
-<h2>Welcome to Kasi Bakes!</h2>
-<p>welcome to kasi bakes, an artisan bakery located in the heart of mofolo, Soweto. We specialise in traditional South African baked goods.</p>
-<h2>why choose us?</h2>
-<h3>100% handmade</h3>
-<p>every item is made with love and care, using traditional methods and the finest ingredients.</p>
-<h3>community roots</h3>
-<p>born and raised in soweto, we employ local talent and source our ingredients from nearby farms.</p>
-<h3>bulk orders welcome</h3>
-<p>planning a corporate event, party or school function? we offer bulk ordering options.</p>
- <h2>featured products</h2>
- <h3>vetkoek</h3>
- <p>golden, fluffy and delicious!</p>
- <p>from R8 each</p>
- <h3>koeksisters</h3>
- <p>crispy, golden and sweet!</p>
- <p>from R6 each</p>
-    <h3>white bread</h3>
-    <p>freshly baked daily!</p>
-    <p>from R22 per loaf</p>
-    location
-    <h2>find us</h2>
-<p>we are located at 123 Mofolo Street, Soweto. come visit us or place an order for pick up!</p>
-<p>phone: 011 123 4567</p>
-<p>email: info@kasibakes.com</p>  
 </html>

@@ -1,0 +1,1890 @@
+/* ==========================================================
+   Kasi Bakes — styles.css
+   External Stylesheet — Part 2 (CSS) + Part 3 (additions)
+   
+   TABLE OF CONTENTS:
+   1.  CSS Custom Properties (Variables)
+   2.  CSS Reset / Base Styles
+   3.  Typography
+   4.  Utility Classes
+   5.  Header & Navigation
+   6.  Hero Section
+   7.  Features Section
+   8.  Products Grid & Cards
+   9.  Footer
+   10. Page Banner
+   11. About Page
+   12. Contact Page
+   13. Accordion (Part 3)
+   14. Search & Filter Bar (Part 3)
+   15. Lightbox Gallery (Part 3)
+   16. Forms (Part 3)
+   17. Maps Section (Part 3)
+   18. Pricing Grid
+   19. Timeline
+   20. Responsive Design — Tablet (max-width: 768px)
+   21. Responsive Design — Mobile (max-width: 480px)
+   ========================================================== */
+
+
+/* ==========================================================
+   1. CSS CUSTOM PROPERTIES (VARIABLES)
+   Central colour and font settings used across the site
+   ========================================================== */
+:root {
+  /* Brand Colours */
+  --colour-primary: #8B2500;       /* Deep burnt red — main brand colour */
+  --colour-primary-dark: #6B1A00;  /* Darker red for hover states */
+  --colour-accent: #D4700A;        /* Warm amber/orange — accent colour */
+  --colour-accent-dark: #B55A00;   /* Darker amber for hover */
+  --colour-gold: #DAA520;          /* Gold — highlight and tags */
+
+  /* Neutral Colours */
+  --colour-white: #FFFFFF;
+  --colour-off-white: #FAF7F2;     /* Warm off-white — page backgrounds */
+  --colour-light-grey: #F0EBE3;    /* Card backgrounds */
+  --colour-mid-grey: #C8B8A2;      /* Borders */
+  --colour-dark-grey: #3D3027;     /* Body text */
+  --colour-black: #1A1209;         /* Headings */
+
+  /* Feedback Colours */
+  --colour-success: #2E7D32;
+  --colour-error: #C62828;
+  --colour-warning: #E65100;
+
+  /* Typography */
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Segoe UI', Arial, sans-serif;
+  --font-size-base: 1rem;          /* 16px */
+  --line-height-base: 1.6;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+}
+
+
+/* ==========================================================
+   2. CSS RESET / BASE STYLES
+   Ensures consistent rendering across all browsers
+   ========================================================== */
+
+/* Box-sizing: border-box makes width/padding calculations predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set base font and background on the html element */
+html {
+  font-size: 100%;        /* 1rem = 16px */
+  scroll-behavior: smooth;
+}
+
+/* Default body styles */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--colour-dark-grey);
+  background-color: var(--colour-off-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make main grow to fill space above footer */
+main {
+  flex: 1;
+}
+
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Make images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove default anchor underline, set colour */
+a {
+  color: var(--colour-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+  color: var(--colour-accent);
+  text-decoration: underline;
+}
+
+/* Focus outline for keyboard accessibility */
+:focus-visible {
+  outline: 3px solid var(--colour-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+/* ==========================================================
+   3. TYPOGRAPHY
+   Font sizes, weights, and spacing for all text elements
+   ========================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--colour-black);
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+p {
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+small, .small-note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Section headings — centred */
+section > h2,
+.features h2,
+.featured-products h2,
+.accordion-section h2,
+.about-story h2,
+.mission-vision h2,
+.team-section h2,
+.timeline-section h2,
+.pricing-info h2,
+.maps-section h2 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+/* Decorative underline on section headings */
+section > h2::after,
+.features h2::after,
+.featured-products h2::after,
+.accordion-section h2::after,
+.about-story h2::after,
+.mission-vision h2::after,
+.team-section h2::after,
+.timeline-section h2::after,
+.pricing-info h2::after,
+.maps-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--colour-accent);
+  margin: var(--space-sm) auto 0;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ==========================================================
+   4. UTILITY CLASSES
+   Reusable helper classes
+   ========================================================== */
+
+/* Screen-reader only — visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Primary button — filled red */
+.btn-primary {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+  border-color: var(--colour-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--colour-primary-dark);
+  border-color: var(--colour-primary-dark);
+  color: var(--colour-white);
+}
+
+/* Secondary button — outlined */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--colour-primary);
+  border-color: var(--colour-primary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+}
+
+/* Small button — used on product cards */
+.btn-small {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
+  background-color: var(--colour-accent);
+  color: var(--colour-white);
+  border-color: var(--colour-accent);
+  border-radius: var(--radius-sm);
+}
+
+.btn-small:hover,
+.btn-small:focus {
+  background-color: var(--colour-accent-dark);
+  border-color: var(--colour-accent-dark);
+  color: var(--colour-white);
+}
+
+/* Link-style button — used in no-results message */
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--colour-primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+
+.link-btn:hover {
+  color: var(--colour-accent);
+}
+
+/* Price tag */
+.price {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--colour-primary);
+  font-size: 1.05rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Section call-to-action wrapper */
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+
+/* ==========================================================
+   5. HEADER & NAVIGATION
+   Sticky header with logo, nav links, and mobile hamburger
+   ========================================================== */
+
+.site-header {
+  background-color: var(--colour-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* Logo */
+.logo a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--colour-white);
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: var(--colour-white);
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: 0.03em;
+}
+
+.logo span {
+  font-size: 0.8rem;
+  color: var(--colour-gold);
+  font-style: italic;
+}
+
+/* Navigation */
+.main-nav ul {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.main-nav a {
+  color: var(--colour-white);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast);
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--colour-gold);
+  text-decoration: none;
+}
+
+/* Active page link */
+.main-nav a.active {
+  background-color: var(--colour-accent);
+  color: var(--colour-white);
+}
+
+.main-nav a.active:hover {
+  background-color: var(--colour-accent-dark);
+}
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--colour-white);
+  border-radius: 2px;
+  transition: transform var(--transition-base),
+              opacity var(--transition-fast);
+}
+
+/* Hamburger animation when active */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* ==========================================================
+   6. HERO SECTION
+   Full-width banner on the homepage
+   ========================================================== */
+
+.hero {
+  background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+  color: var(--colour-white);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: var(--colour-white);
+  margin-bottom: var(--space-md);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.92;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero .btn-primary {
+  background-color: var(--colour-white);
+  color: var(--colour-primary);
+  border-color: var(--colour-white);
+}
+
+.hero .btn-primary:hover {
+  background-color: var(--colour-gold);
+  border-color: var(--colour-gold);
+  color: var(--colour-black);
+}
+
+.hero .btn-secondary {
+  border-color: var(--colour-white);
+  color: var(--colour-white);
+}
+
+.hero .btn-secondary:hover {
+  background-color: var(--colour-white);
+  color: var(--colour-primary);
+}
+
+
+/* ==========================================================
+   7. FEATURES SECTION
+   4-column grid of feature cards on homepage
+   ========================================================== */
+
+.features {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-white);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--colour-off-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  border: 1px solid var(--colour-mid-grey);
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.feature-card h3 {
+  color: var(--colour-primary);
+  margin-bottom: var(--space-sm);
+}
+
+
+/* ==========================================================
+   8. PRODUCTS GRID & CARDS
+   Used on homepage (featured) and products.html
+   ========================================================== */
+
+.featured-products {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-off-white);
+}
+
+.products-section {
+  padding: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Product card */
+.product-card {
+  background-color: var(--colour-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--colour-mid-grey);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background-color: var(--colour-light-grey);
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* Lightbox trigger button overlaid on image */
+.lightbox-trigger {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--colour-white);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.product-img-wrapper:hover .lightbox-trigger,
+.product-img-wrapper:focus-within .lightbox-trigger {
+  opacity: 1;
+}
+
+.lightbox-trigger:hover,
+.lightbox-trigger:focus {
+  background-color: var(--colour-primary);
+  opacity: 1;
+}
+
+/* Product info area */
+.product-info {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.product-info h3 {
+  color: var(--colour-primary);
+}
+
+.product-info p {
+  font-size: 0.9rem;
+  color: #555;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Category tag badge */
+.product-category-tag {
+  display: inline-block;
+  background-color: var(--colour-light-grey);
+  color: var(--colour-accent-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* No results message */
+.no-results {
+  text-align: center;
+  padding: var(--space-xl);
+  color: #666;
+  font-size: 1.1rem;
+}
+
+
+/* ==========================================================
+   9. FOOTER
+   4-column grid footer with quick links and contact info
+   ========================================================== */
+
+.site-footer {
+  background-color: var(--colour-black);
+  color: #CCC;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.footer-col h3 {
+  color: var(--colour-gold);
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-heading);
+}
+
+.footer-col p,
+.footer-col li {
+  font-size: 0.875rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+.footer-col ul li {
+  margin-bottom: var(--space-xs);
+}
+
+.footer-col a {
+  color: #CCC;
+  transition: color var(--transition-fast);
+}
+
+.footer-col a:hover,
+.footer-col a:focus {
+  color: var(--colour-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.8rem;
+  color: #888;
+}
+
+
+/* ==========================================================
+   10. PAGE BANNER
+   Used at the top of inner pages (about, products, etc.)
+   ========================================================== */
+
+.page-banner {
+  background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+  color: var(--colour-white);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.page-banner h2 {
+  font-size: 2.2rem;
+  color: var(--colour-white);
+  margin-bottom: var(--space-sm);
+}
+
+.page-banner p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+
+/* ==========================================================
+   11. ABOUT PAGE
+   Story, mission/vision, team, and timeline sections
+   ========================================================== */
+
+/* Story section layout */
+.about-story {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-white);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.about-image img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+}
+
+/* Mission & Vision */
+.mission-vision {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-off-white);
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mv-card {
+  background-color: var(--colour-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--colour-accent);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.mv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.mv-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.mv-card h3 {
+  color: var(--colour-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.mv-card ul li {
+  list-style: disc;
+  margin-left: var(--space-md);
+  margin-bottom: var(--space-xs);
+  font-size: 0.95rem;
+}
+
+/* Team grid */
+.team-section {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-white);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  text-align: center;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background-color: var(--colour-off-white);
+  border: 1px solid var(--colour-mid-grey);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.team-img-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto var(--space-md);
+  border: 3px solid var(--colour-accent);
+}
+
+.team-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  color: var(--colour-primary);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.team-role {
+  color: var(--colour-accent);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Timeline */
+.timeline-section {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-off-white);
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: var(--space-xl);
+  border-left: 3px solid var(--colour-accent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-lg);
+}
+
+/* Circle dot on timeline */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-lg) - 8px);
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--colour-accent);
+  border-radius: 50%;
+  border: 3px solid var(--colour-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-year {
+  display: inline-block;
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-content h3 {
+  color: var(--colour-primary);
+  margin-bottom: var(--space-xs);
+}
+
+
+/* ==========================================================
+   12. CONTACT PAGE
+   Contact info cards, contact form, and trading hours table
+   ========================================================== */
+
+.contact-section {
+  padding: var(--space-xl) var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.contact-card {
+  background-color: var(--colour-off-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-left: 4px solid var(--colour-accent);
+}
+
+.contact-card h3 {
+  color: var(--colour-primary);
+  margin-bottom: var(--space-sm);
+  font-size: 1.05rem;
+}
+
+.contact-card address {
+  font-style: normal;
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* Trading hours table */
+.hours-table td {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--colour-mid-grey);
+}
+
+.hours-table td:first-child {
+  font-weight: 600;
+  color: var(--colour-dark-grey);
+  width: 55%;
+}
+
+/* Find us section on homepage */
+.find-us {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-white);
+  text-align: center;
+}
+
+.contact-quick {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+.contact-quick p {
+  margin: 0;
+}
+
+
+/* ==========================================================
+   13. ACCORDION (Part 3 — JavaScript Interactive Element)
+   FAQ accordion on the homepage
+   ========================================================== */
+
+.accordion-section {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-light-grey);
+}
+
+.accordion {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.accordion-item {
+  background-color: var(--colour-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--colour-mid-grey);
+  overflow: hidden;
+}
+
+/* Accordion trigger button */
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--colour-dark-grey);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.accordion-trigger:hover,
+.accordion-trigger:focus {
+  background-color: var(--colour-off-white);
+  color: var(--colour-primary);
+}
+
+/* When expanded */
+.accordion-trigger.expanded {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+}
+
+.accordion-icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+/* Panel content */
+.accordion-panel {
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--colour-mid-grey);
+  animation: slideDown 0.2s ease;
+}
+
+.accordion-panel p {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================================
+   14. SEARCH & FILTER BAR (Part 3 — Dynamic Content)
+   Search and category filter on products.html
+   ========================================================== */
+
+.search-filter {
+  padding: var(--space-lg);
+  background-color: var(--colour-white);
+  border-bottom: 1px solid var(--colour-mid-grey);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  margin-bottom: var(--space-md);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem var(--space-md);
+  font-size: 1rem;
+  border: 2px solid var(--colour-mid-grey);
+  border-radius: var(--radius-lg);
+  background-color: var(--colour-off-white);
+  transition: border-color var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.search-bar input:focus {
+  border-color: var(--colour-primary);
+  outline: none;
+  background-color: var(--colour-white);
+}
+
+/* Filter buttons */
+.filter-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-sm);
+}
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--colour-mid-grey);
+  border-radius: var(--radius-lg);
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: var(--colour-dark-grey);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+  border-color: var(--colour-primary);
+  color: var(--colour-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--colour-primary);
+  border-color: var(--colour-primary);
+  color: var(--colour-white);
+}
+
+.result-count {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   15. LIGHTBOX GALLERY (Part 3 — Gallery Feature)
+   Full-screen image overlay for products.html
+   ========================================================== */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.lightbox-img-wrapper {
+  max-width: 800px;
+  max-height: 70vh;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+/* Lightbox caption */
+.lightbox-caption {
+  text-align: center;
+  color: var(--colour-white);
+}
+
+.lightbox-caption h3 {
+  color: var(--colour-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.lightbox-caption p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* Close button */
+.lightbox-close {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-lg);
+  background: none;
+  border: 2px solid rgba(255,255,255,0.4);
+  color: var(--colour-white);
+  font-size: 2rem;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  background-color: var(--colour-primary);
+  border-color: var(--colour-primary);
+}
+
+/* Prev / Next navigation buttons */
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255,255,255,0.3);
+  color: var(--colour-white);
+  font-size: 2.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.lightbox-prev { left: var(--space-md); }
+.lightbox-next { right: var(--space-md); }
+
+.lightbox-prev:hover,
+.lightbox-prev:focus,
+.lightbox-next:hover,
+.lightbox-next:focus {
+  background-color: var(--colour-primary);
+  border-color: var(--colour-primary);
+}
+
+/* Custom map marker */
+.custom-map-marker {
+  background: none;
+  border: none;
+}
+
+.marker-pin {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+
+/* ==========================================================
+   16. FORMS (Part 3 — Form Functionality)
+   Styles for enquiry.html and contact.html forms
+   ========================================================== */
+
+.form-section,
+.contact-form-wrapper {
+  padding: var(--space-xl) var(--space-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form-wrapper {
+  padding: 0;
+  max-width: 100%;
+}
+
+.form-intro {
+  color: #555;
+  margin-bottom: var(--space-lg);
+  font-size: 0.95rem;
+}
+
+/* Form */
+.kasi-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Fieldset */
+.kasi-form fieldset {
+  border: 1px solid var(--colour-mid-grey);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.kasi-form legend {
+  font-weight: 700;
+  color: var(--colour-primary);
+  font-size: 1.05rem;
+  padding: 0 var(--space-sm);
+  font-family: var(--font-heading);
+}
+
+/* Form group — label + input wrapper */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--colour-dark-grey);
+}
+
+/* Required asterisk */
+.required {
+  color: var(--colour-error);
+}
+
+/* Input, select, textarea base styles */
+.kasi-form input[type="text"],
+.kasi-form input[type="email"],
+.kasi-form input[type="tel"],
+.kasi-form input[type="number"],
+.kasi-form input[type="date"],
+.kasi-form select,
+.kasi-form textarea {
+  padding: 0.65rem var(--space-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 2px solid var(--colour-mid-grey);
+  border-radius: var(--radius-md);
+  background-color: var(--colour-white);
+  color: var(--colour-dark-grey);
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+.kasi-form input:focus,
+.kasi-form select:focus,
+.kasi-form textarea:focus {
+  border-color: var(--colour-primary);
+  box-shadow: 0 0 0 3px rgba(139, 37, 0, 0.12);
+  outline: none;
+}
+
+/* Invalid state */
+.kasi-form input.invalid,
+.kasi-form select.invalid,
+.kasi-form textarea.invalid {
+  border-color: var(--colour-error);
+  background-color: #FFF5F5;
+}
+
+/* Error message */
+.error-msg {
+  color: var(--colour-error);
+  font-size: 0.85rem;
+  font-weight: 500;
+  min-height: 1.2em;
+}
+
+/* Field hint */
+.field-hint {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Radio buttons */
+.radio-group {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.radio-label input[type="radio"] {
+  width: auto;
+  cursor: pointer;
+  accent-color: var(--colour-primary);
+}
+
+/* Checkbox */
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  accent-color: var(--colour-primary);
+  flex-shrink: 0;
+}
+
+/* Character counter */
+.char-count {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+}
+
+/* Form action buttons */
+.form-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+/* Response panel (shown after successful form submission) */
+.response-panel {
+  background-color: #F0FAF0;
+  border: 2px solid var(--colour-success);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.response-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.response-panel h3 {
+  color: var(--colour-success);
+  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+}
+
+.response-panel p {
+  color: var(--colour-dark-grey);
+  margin-bottom: var(--space-md);
+}
+
+/* Response table (price breakdown) */
+.response-table {
+  margin: var(--space-md) auto;
+  max-width: 500px;
+  font-size: 0.95rem;
+}
+
+.response-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid #D0EDD0;
+  text-align: left;
+}
+
+.response-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+.response-table .discount-row td {
+  color: var(--colour-success);
+}
+
+.response-table .total-row td {
+  font-size: 1.1rem;
+  color: var(--colour-primary);
+  border-top: 2px solid var(--colour-success);
+  border-bottom: none;
+}
+
+.response-note {
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
+  margin-top: var(--space-sm);
+}
+
+/* Pricing grid section */
+.pricing-info {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-light-grey);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background-color: var(--colour-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--colour-mid-grey);
+}
+
+.pricing-card.highlight {
+  border-top-color: var(--colour-gold);
+}
+
+.pricing-card h3 {
+  color: var(--colour-primary);
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+}
+
+.pricing-card ul li {
+  font-size: 0.9rem;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--colour-light-grey);
+  color: var(--colour-dark-grey);
+}
+
+.pricing-card ul li:last-child {
+  border-bottom: none;
+}
+
+
+/* ==========================================================
+   17. MAPS SECTION (Part 3 — Interactive Maps)
+   Tab-based interactive Leaflet maps on contact.html
+   ========================================================== */
+
+.maps-section {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--colour-off-white);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Map tab buttons */
+.map-tabs {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.map-tab {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--colour-mid-grey);
+  border-radius: var(--radius-md);
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--colour-dark-grey);
+  font-weight: 500;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+.map-tab:hover,
+.map-tab:focus {
+  border-color: var(--colour-primary);
+  color: var(--colour-primary);
+}
+
+.map-tab.active {
+  background-color: var(--colour-primary);
+  border-color: var(--colour-primary);
+  color: var(--colour-white);
+}
+
+/* Map container */
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--colour-mid-grey);
+  z-index: 1;
+}
+
+.map-address {
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+
+/* ==========================================================
+   18. PRICING GRID (already covered in forms section above)
+   ========================================================== */
+
+
+/* ==========================================================
+   19. TIMELINE (already covered in about section above)
+   ========================================================== */
+
+
+/* ==========================================================
+   20. RESPONSIVE DESIGN — TABLET (max-width: 768px)
+   Layout adjustments for tablet screens
+   ========================================================== */
+
+@media screen and (max-width: 768px) {
+
+  /* Typography adjustments */
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+
+  .hero h2 { font-size: 1.8rem; }
+  .page-banner h2 { font-size: 1.6rem; }
+
+  /* Header: show hamburger, hide nav by default */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--colour-primary-dark);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-md);
+    z-index: 99;
+  }
+
+  /* Show nav when open class is added by JS */
+  .main-nav.open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .main-nav a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1rem;
+  }
+
+  /* Layouts: 2-column */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  /* Header container adjustments */
+  .header-container {
+    position: relative;
+    padding: var(--space-sm) var(--space-md);
+    flex-wrap: wrap;
+  }
+}
+
+
+/* ==========================================================
+   21. RESPONSIVE DESIGN — MOBILE (max-width: 480px)
+   Single-column layout for small screens
+   ========================================================== */
+
+@media screen and (max-width: 480px) {
+
+  /* Typography — smaller sizes for mobile */
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.2rem; }
+  .hero h2 { font-size: 1.5rem; }
+  .hero p { font-size: 1rem; }
+  .page-banner h2 { font-size: 1.4rem; }
+
+  /* Single column layouts */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduced padding on small screens */
+  .hero {
+    padding: var(--space-lg) var(--space-md);
+    min-height: 50vh;
+  }
+
+  .features,
+  .featured-products,
+  .accordion-section,
+  .about-story,
+  .mission-vision,
+  .team-section,
+  .timeline-section,
+  .pricing-info,
+  .maps-section,
+  .form-section,
+  .contact-section {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .footer-grid {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  /* Images: full height on mobile */
+  .product-img-wrapper {
+    height: 180px;
+  }
+
+  /* Lightbox: full screen on mobile */
+  .lightbox-prev { left: var(--space-xs); }
+  .lightbox-next { right: var(--space-xs); }
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+
+  /* Map height reduced on mobile */
+  .map-container {
+    height: 280px;
+  }
+
+  /* Timeline: adjust left padding */
+  .timeline {
+    padding-left: var(--space-lg);
+  }
+
+  /* Contact quick info stacked */
+  .contact-quick {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  /* Form buttons stacked */
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  /* Images responsive */
+  .about-image img {
+    max-height: 250px;
+    object-fit: cover;
+  }
+}

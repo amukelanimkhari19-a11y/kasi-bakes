@@ -1,0 +1,10 @@
+# robots.txt for Kasi Bakes
+# This file instructs search engine crawlers which pages to index.
+# Reference: https://www.robotstxt.org/robotstxt.html
+
+# Allow all search engine crawlers to index the site
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://amukelanimkhari19-a11y.github.io/kasi-bakes/sitemap.xml

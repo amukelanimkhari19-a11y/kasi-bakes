@@ -1,92 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>products | kasi bakes</title>
+  <!-- Character encoding and responsive viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Title tag -->
+  <title>Our Products | Kasi Bakes – Freshly Baked Goods in Soweto</title>
+
+  <!-- SEO: Meta description -->
+  <meta name="description" content="Browse Kasi Bakes' full product catalogue — freshly baked breads, traditional vetkoek and koeksisters, pastries, cakes, and custom bulk orders in Soweto.">
+
+  <!-- SEO: Meta keywords -->
+  <meta name="keywords" content="bread Soweto, vetkoek order, koeksisters Soweto, custom cakes Johannesburg, bulk bakery order, artisan baked goods, Kasi Bakes products">
+
+  <!-- SEO: Author -->
+  <meta name="author" content="Kasi Bakes">
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<link rel="stylesheet" href="css/styles.css">
 <body>
-    <a href="index.html">home</a>
-        <a href="about.html">about</a>
-            <a href="products.html">products</a>
-                <a href="enquiry.html">enquiry</a>
-                    <a href="contact.html">contact</a>
-</body>
-</html>
-<h1>Kasi Bakes</h1>
-        <p>Baked with love in Soweto</p>
-    <!-- MAIN CONTENT -->
-    <main>
 
-        <h2>Our Products</h2>
-        <p>At Kasi Bakes, we offer a wide range of freshly baked goods made from quality ingredients. Our breads are baked every morning and available until sold out. We also offer traditional South African bakes like vetkoek and koeksisters. Custom cakes are available for birthdays, graduations, and special events. All bulk and custom orders require at least 48 hours advance notice.</p>
+  <!-- HEADER: Site branding and navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo / Site name -->
+      <div class="logo">
+        <a href="index.html">
+          <h1>Kasi Bakes</h1>
+          <span>Baked with love in Soweto</span>
+        </a>
+      </div>
 
-        <!-- BREADS -->
-        <h2>Breads</h2>
+      <!-- Hamburger button for mobile nav -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <h3>White Loaf</h3>
-        <p>Soft, pillowy white bread baked fresh each morning. Perfect for sandwiches, toast, or alongside any meal.</p>
-        <p>Price: R22 per loaf</p>
+      <!-- Main navigation menu -->
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <h3>Brown Loaf</h3>
-        <p>Hearty, nutty brown bread made with wholewheat flour for a nutritious everyday loaf.</p>
-        <p>Price: R24 per loaf</p>
-        <h3>Seeded Loaf</h3>
-        <p>Our premium loaf loaded with pumpkin, sunflower, and sesame seeds for extra crunch and nutrition.</p>
-        <p>Price: R30 per loaf</p>
+  <!-- MAIN CONTENT -->
+  <main>
 
-        <!-- TRADITIONAL SA BAKES -->
-        <h2>Traditional SA Bakes</h2>
+    <!-- PAGE BANNER -->
+    <section class="page-banner" aria-label="Products page banner">
+      <h2>Our Products</h2>
+      <p>Freshly baked every morning — order online or collect in store.</p>
+    </section>
 
-        <h3>Vetkoek</h3>
-        <p>Golden deep-fried dough, available with savoury mince, apricot jam, or syrup fillings.</p>
-        <p>Price: From R8 each</p>
+    <!-- SEARCH AND FILTER SECTION -->
+    <section class="search-filter" aria-label="Search and filter products">
+      <div class="search-bar">
+        <!-- Search input for filtering products by name -->
+        <label for="productSearch" class="sr-only">Search products</label>
+        <input type="text" id="productSearch" placeholder="🔍 Search products (e.g. bread, cake)..." aria-label="Search products">
+      </div>
 
-        <h3>Koeksisters</h3>
-        <p>Crispy, sticky-sweet plaited koeksisters soaked in a spiced syrup. A South African favourite.</p>
-        <p>Price: R12 each</p>
+      <!-- Category filter buttons -->
+      <div class="filter-buttons" role="group" aria-label="Filter by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="bread">Breads</button>
+        <button class="filter-btn" data-filter="traditional">Traditional</button>
+        <button class="filter-btn" data-filter="pastry">Pastries &amp; Cakes</button>
+        <button class="filter-btn" data-filter="bulk">Bulk Orders</button>
+      </div>
 
-        <h3>Buttermilk Rusks</h3>
-        <p>Traditional twice-baked buttermilk rusks — perfect for dunking in your morning coffee or tea.</p>
-        <p>Price: R45 per 500g bag</p>
+      <!-- Result count display -->
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+    </section>
 
-        <!-- PASTRIES AND CAKES -->
-        <h2>Pastries and Cakes</h2>
+    <!-- PRODUCTS GALLERY SECTION -->
+    <section class="products-section" aria-labelledby="products-heading">
+      <h2 id="products-heading" class="sr-only">Full Product Catalogue</h2>
 
-        <h3>Doughnuts</h3>
-        <p>Fluffy ring doughnuts glazed with icing sugar or chocolate. Made fresh daily.</p>
-        <p>Price: R10 each</p>
+      <div class="products-grid" id="productsGrid">
 
-        <h3>Scones</h3>
-        <p>Flaky, buttery scones served with strawberry jam and cream. Available plain or with raisins.</p>
-        <p>Price: R15 each</p>
+        <!-- ===== BREADS ===== -->
 
-        <h3>Custom Cakes</h3>
-        <p>Celebration cakes for birthdays, graduations, and events. Customised to your design with advance order.</p>
-        <p>Price: From R250</p>
-        <!-- BULK ORDERS -->
-        <h2>Bulk and Corporate Orders</h2>
-        <p>Need a large quantity for an event, school, or office function? We offer bulk pricing and delivery for orders of 50 or more items. Contact us at least 48 hours in advance to place your order.</p>
+        <!-- Product: White Loaf -->
+        <article class="product-card" data-category="bread" data-name="white loaf bread">
+          <div class="product-img-wrapper">
+            <img src="images/white-bread.jpg"
+                 alt="Freshly baked white loaf of bread on a wooden chopping board"
+                 class="product-img gallery-img"
+                 data-title="White Loaf"
+                 data-desc="Soft, pillowy white bread baked fresh each morning — R22 per loaf"
+                 onerror="this.src='https://via.placeholder.com/300x200/F5DEB3/333333?text=White+Loaf'">
+            <button class="lightbox-trigger" aria-label="View White Loaf image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Bread</span>
+            <h3>White Loaf</h3>
+            <p>Soft, pillowy white bread baked fresh each morning. Perfect for sandwiches, toast, or alongside any meal.</p>
+            <span class="price">R22 per loaf</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
 
-    </main>
+        <!-- Product: Brown Loaf -->
+        <article class="product-card" data-category="bread" data-name="brown loaf wholewheat bread">
+          <div class="product-img-wrapper">
+            <img src="images/brown-bread.jpg"
+                 alt="Hearty brown wholewheat loaf of bread"
+                 class="product-img gallery-img"
+                 data-title="Brown Loaf"
+                 data-desc="Hearty wholewheat brown bread — R24 per loaf"
+                 onerror="this.src='https://via.placeholder.com/300x200/8B6914/FFFFFF?text=Brown+Loaf'">
+            <button class="lightbox-trigger" aria-label="View Brown Loaf image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Bread</span>
+            <h3>Brown Loaf</h3>
+            <p>Hearty, nutty brown bread made with wholewheat flour for a nutritious everyday loaf.</p>
+            <span class="price">R24 per loaf</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
 
-    <!-- FOOTER -->
-    <footer>
+        <!-- Product: Seeded Loaf -->
+        <article class="product-card" data-category="bread" data-name="seeded loaf seeds bread premium">
+          <div class="product-img-wrapper">
+            <img src="images/seeded-bread.jpg"
+                 alt="Premium seeded loaf with pumpkin, sunflower and sesame seeds on top"
+                 class="product-img gallery-img"
+                 data-title="Seeded Loaf"
+                 data-desc="Premium loaf with pumpkin, sunflower and sesame seeds — R30 per loaf"
+                 onerror="this.src='https://via.placeholder.com/300x200/A0522D/FFFFFF?text=Seeded+Loaf'">
+            <button class="lightbox-trigger" aria-label="View Seeded Loaf image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Bread</span>
+            <h3>Seeded Loaf</h3>
+            <p>Our premium loaf loaded with pumpkin, sunflower, and sesame seeds for extra crunch and nutrition.</p>
+            <span class="price">R30 per loaf</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- ===== TRADITIONAL SA BAKES ===== -->
+
+        <!-- Product: Vetkoek -->
+        <article class="product-card" data-category="traditional" data-name="vetkoek traditional south african fried dough mince">
+          <div class="product-img-wrapper">
+            <img src="images/vetkoek.jpg"
+                 alt="Golden freshly fried vetkoek filled with savoury mince on a plate"
+                 class="product-img gallery-img"
+                 data-title="Vetkoek"
+                 data-desc="Golden deep-fried dough with mince or sweet fillings — from R8 each"
+                 onerror="this.src='https://via.placeholder.com/300x200/D2691E/FFFFFF?text=Vetkoek'">
+            <button class="lightbox-trigger" aria-label="View Vetkoek image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Traditional</span>
+            <h3>Vetkoek</h3>
+            <p>Golden deep-fried dough, available with savoury mince, apricot jam, or syrup fillings.</p>
+            <span class="price">From R8 each</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- Product: Koeksisters -->
+        <article class="product-card" data-category="traditional" data-name="koeksisters traditional sticky sweet syrup plaited">
+          <div class="product-img-wrapper">
+            <img src="images/koeksisters.jpg"
+                 alt="Sticky golden koeksisters plaited and soaked in sweet spiced syrup"
+                 class="product-img gallery-img"
+                 data-title="Koeksisters"
+                 data-desc="Crispy, sticky-sweet plaited koeksisters soaked in spiced syrup — R12 each"
+                 onerror="this.src='https://via.placeholder.com/300x200/DAA520/FFFFFF?text=Koeksisters'">
+            <button class="lightbox-trigger" aria-label="View Koeksisters image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Traditional</span>
+            <h3>Koeksisters</h3>
+            <p>Crispy, sticky-sweet plaited koeksisters soaked in a spiced syrup. A South African favourite.</p>
+            <span class="price">R12 each</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- Product: Buttermilk Rusks -->
+        <article class="product-card" data-category="traditional" data-name="buttermilk rusks traditional bake coffee dunking">
+          <div class="product-img-wrapper">
+            <img src="images/rusks.jpg"
+                 alt="Traditional buttermilk rusks in a bag, perfect for dunking in coffee"
+                 class="product-img gallery-img"
+                 data-title="Buttermilk Rusks"
+                 data-desc="Traditional twice-baked buttermilk rusks — R45 per 500g bag"
+                 onerror="this.src='https://via.placeholder.com/300x200/DEB887/333333?text=Rusks'">
+            <button class="lightbox-trigger" aria-label="View Rusks image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Traditional</span>
+            <h3>Buttermilk Rusks</h3>
+            <p>Traditional twice-baked buttermilk rusks — perfect for dunking in your morning coffee or tea.</p>
+            <span class="price">R45 per 500g bag</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- ===== PASTRIES AND CAKES ===== -->
+
+        <!-- Product: Doughnuts -->
+        <article class="product-card" data-category="pastry" data-name="doughnuts glazed icing chocolate pastry">
+          <div class="product-img-wrapper">
+            <img src="images/doughnuts.jpg"
+                 alt="Fluffy ring doughnuts glazed with icing sugar and chocolate topping"
+                 class="product-img gallery-img"
+                 data-title="Doughnuts"
+                 data-desc="Fluffy glazed doughnuts made fresh daily — R10 each"
+                 onerror="this.src='https://via.placeholder.com/300x200/FF69B4/FFFFFF?text=Doughnuts'">
+            <button class="lightbox-trigger" aria-label="View Doughnuts image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Pastry</span>
+            <h3>Doughnuts</h3>
+            <p>Fluffy ring doughnuts glazed with icing sugar or chocolate. Made fresh daily.</p>
+            <span class="price">R10 each</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- Product: Scones -->
+        <article class="product-card" data-category="pastry" data-name="scones buttery flaky jam cream raisins pastry">
+          <div class="product-img-wrapper">
+            <img src="images/scones.jpg"
+                 alt="Flaky buttery scones served with strawberry jam and cream"
+                 class="product-img gallery-img"
+                 data-title="Scones"
+                 data-desc="Flaky, buttery scones with strawberry jam and cream — R15 each"
+                 onerror="this.src='https://via.placeholder.com/300x200/FAEBD7/333333?text=Scones'">
+            <button class="lightbox-trigger" aria-label="View Scones image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Pastry</span>
+            <h3>Scones</h3>
+            <p>Flaky, buttery scones served with strawberry jam and cream. Available plain or with raisins.</p>
+            <span class="price">R15 each</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- Product: Custom Cakes -->
+        <article class="product-card" data-category="pastry" data-name="custom cakes birthday graduation celebration event cake">
+          <div class="product-img-wrapper">
+            <img src="images/custom-cake.jpg"
+                 alt="Beautifully decorated custom celebration cake for a birthday event"
+                 class="product-img gallery-img"
+                 data-title="Custom Cakes"
+                 data-desc="Customised celebration cakes for any occasion — from R250"
+                 onerror="this.src='https://via.placeholder.com/300x200/FF6347/FFFFFF?text=Custom+Cake'">
+            <button class="lightbox-trigger" aria-label="View Custom Cakes image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Pastry</span>
+            <h3>Custom Cakes</h3>
+            <p>Celebration cakes for birthdays, graduations, and events. Customised to your design with advance order.</p>
+            <span class="price">From R250</span>
+            <a href="enquiry.html" class="btn btn-small">Order Now</a>
+          </div>
+        </article>
+
+        <!-- Product: Bulk Order -->
+        <article class="product-card" data-category="bulk" data-name="bulk corporate order event school office function">
+          <div class="product-img-wrapper">
+            <img src="images/bulk-order.jpg"
+                 alt="Large trays of assorted baked goods prepared for a corporate bulk order"
+                 class="product-img gallery-img"
+                 data-title="Bulk & Corporate Orders"
+                 data-desc="Large quantity orders for events and corporate functions — contact us for pricing"
+                 onerror="this.src='https://via.placeholder.com/300x200/708090/FFFFFF?text=Bulk+Orders'">
+            <button class="lightbox-trigger" aria-label="View Bulk Orders image fullscreen">🔍</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category-tag">Bulk</span>
+            <h3>Bulk &amp; Corporate Orders</h3>
+            <p>Need a large quantity for an event, school, or office function? We offer bulk pricing for orders of 50 or more items with delivery available.</p>
+            <span class="price">Contact for pricing</span>
+            <a href="enquiry.html" class="btn btn-small">Get a Quote</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- No results message (shown by JS when search has no matches) -->
+      <div class="no-results" id="noResults" hidden aria-live="polite">
+        <p>No products found for your search. Try a different keyword or <button class="link-btn" id="clearSearch">clear the search</button>.</p>
+      </div>
+
+    </section>
+
+    <!-- LIGHTBOX MODAL (controlled by JS) -->
+    <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Product image viewer" hidden>
+      <div class="lightbox-container">
+        <!-- Close button -->
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
+        <!-- Previous button -->
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+        <!-- Main image display -->
+        <div class="lightbox-img-wrapper">
+          <img src="" alt="" id="lightboxImg" class="lightbox-img">
+        </div>
+        <!-- Next button -->
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+        <!-- Caption -->
+        <div class="lightbox-caption">
+          <h3 id="lightboxTitle"></h3>
+          <p id="lightboxDesc"></p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+
+      <div class="footer-col">
         <h3>Kasi Bakes</h3>
-        <p>12 Moshoeshoe Street, Mofolo, Soweto, 1804</p>
-        <p>Phone: 011 123 4567</p>
-        <p>Email: info@kasibakes.co.za</p>
+        <p>Artisan baked goods made with love in Mofolo, Soweto since 2018.</p>
+      </div>
 
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>12 Moshoeshoe Street<br>Mofolo, Soweto, 1804</p>
+        <p>Tel: <a href="tel:0111234567">011 123 4567</a></p>
+        <p>Email: <a href="mailto:info@kasibakes.co.za">info@kasibakes.co.za</a></p>
+      </div>
+
+      <div class="footer-col">
         <h3>Trading Hours</h3>
         <ul>
-            <li>Monday to Friday: 06:00 - 17:00</li>
-            <li>Saturday: 06:00 - 14:00</li>
-            <li>Sunday: Closed</li>
+          <li>Mon – Fri: 06:00 – 17:00</li>
+          <li>Saturday: 06:00 – 14:00</li>
+          <li>Sunday: Closed</li>
         </ul>
+      </div>
 
-        <p>© 2026 Kasi Bakes. All rights reserved.</p>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kasi Bakes. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript file -->
+  <script src="javascript/main.js"></script>
 
 </body>
 </html>
